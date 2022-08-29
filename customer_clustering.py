@@ -15,6 +15,9 @@ df = pd.read_csv(os.path.join(os.path.dirname(
 col_names = ['Annual Income (k$)', 'Age', 'Spending Score (1-100)']
 features_real = df[col_names].values
 
+
+# Aufgabe a
+
 # Annual Income
 print("\nAnnual Income:")
 print(f"Mittelwert: {np.mean(features_real[:, 0]):.2f} (k$)")
@@ -36,3 +39,11 @@ print(f"Mittelwert:{np.mean(features_real[:, 2]):.2f}")
 print(f"Standardabweichung:{np.std(features_real[:, 2]):.2f}")
 print(f"Kleinesten Wert: {np.min(features_real[:, 2])}")
 print(f"Größten Wert: {np.max(features_real[:, 2])}")
+
+# Aufgabe b
+# Kovarianzmatrix
+print("\n Kovarianzmatrix Annual Incode & Age")
+features_real_transposed = np.transpose(features_real)
+kovarianzmat = np.cov(features_real_transposed)
+
+print(kovarianzmat)
