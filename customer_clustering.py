@@ -54,6 +54,13 @@ print(kovarianzmat)
 
 scaler = StandardScaler()
 print(scaler.fit(features_real))
-print(scaler.mean_)
-print(scaler.transform(features_real))
+print(f"Mittelwert:\t {scaler.mean_}")
+feature_real_scaled = scaler.transform(features_real)
+print(f"Standardskalierung: {feature_real_scaled}")
 print("\n")
+
+
+# Aufgabe d
+# Kovarianzmatrix
+print("Kovarianzmatrix nach der Standardskalierung gerechnet:")
+print(np.cov(np.transpose(feature_real_scaled)))
