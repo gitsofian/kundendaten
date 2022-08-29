@@ -2,6 +2,7 @@ import pandas as pd
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
 
 # Lade Datensatz
 print(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'Mall_Customers.csv'))
@@ -47,3 +48,12 @@ features_real_transposed = np.transpose(features_real)
 kovarianzmat = np.cov(features_real_transposed)
 
 print(kovarianzmat)
+
+# Aufgabe c
+# Standardskalierung
+
+scaler = StandardScaler()
+print(scaler.fit(features_real))
+print(scaler.mean_)
+print(scaler.transform(features_real))
+print("\n")
